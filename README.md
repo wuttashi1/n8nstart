@@ -2,37 +2,37 @@
 
 # AI Factory · Telegram × n8n
 
-Telegram-интерфейс для видеопайплайнов n8n: загрузка аудио и видео, запуск обработки и проверка статуса.
+Telegram control interface for n8n video pipelines: upload media, trigger processing and check job status.
 
-[Правила разработки](CONTRIBUTING.md) · [Ветки](https://github.com/wuttashi1/n8nstart/branches)
+[Contributing](CONTRIBUTING.md) · [Branches](https://github.com/wuttashi1/n8nstart/branches)
 
 </div>
 
 ---
 
-## Возможности
+## Features
 
-- Приём аудио и видео в Telegram.
-- Отправка запросов в n8n через webhooks.
-- Команды `/upload`, `/render` и `/status`.
-- Хранение входных файлов и журналирование.
+- Receive audio and video through Telegram.
+- Send webhook requests to n8n.
+- `/upload`, `/render` and `/status` commands.
+- Input file storage and application logging.
 
-Обработка видео выполняется внешним пайплайном n8n. Этот репозиторий содержит интерфейс управления ботом.
+Video processing runs in an external n8n pipeline. This repository provides the Telegram control interface.
 
-## Запуск
+## Quick start
 
 ```bash
 cd Bot_n8n
 python -m venv .venv
-# Активируйте .venv для вашей оболочки
+# Activate .venv for your shell
 python -m pip install -r requirements.txt
 python main.py
 ```
 
-Перед запуском создайте `Bot_n8n/.env` с `TELEGRAM_BOT_TOKEN` и `N8N_WEBHOOK_URL`. Необязательный `DOWNLOAD_PATH` задаёт каталог входных файлов. Подготовьте в n8n обработчики `/upload`, `/render` и `/status`.
+Before starting, create `Bot_n8n/.env` with `TELEGRAM_BOT_TOKEN` and `N8N_WEBHOOK_URL`. Optional `DOWNLOAD_PATH` controls input storage. Configure the `/upload`, `/render` and `/status` webhook handlers in n8n.
 
-Подробное описание запросов: [документация бота](Bot_n8n/README.md).
+See the [bot documentation](Bot_n8n/README.md) for request payloads.
 
-## Разработка
+## Development
 
-Соглашения по веткам и изменениям: [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branch and contribution guidelines.
